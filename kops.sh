@@ -12,8 +12,11 @@ mv kubectl /usr/local/bin/kubectl
 mv kops-linux-amd64 /usr/local/bin/kops
 
 #Buckets Create:
-aws s3api create-bucket --bucket cloudanddevopsbyraham0073456.k8s.local --region us-east-1
-aws s3api put-bucket-versioning --bucket cloudanddevopsbyraham0073456.k8s.local --region us-east-1 --versioning-configuration Status=Enabled
-export KOPS_STATE_STORE=s3://cloudanddevopsbyraham0073456.k8s.local
-kops create cluster --name agoproject.k8s.local --zones ap-south-1a --image ami-0f918f7e67a3323f0  --control-plane-count=1 --control-plane-size t2.large --node-count=3 --node-size t2.medium
-kops update cluster --name rahams.k8s.local --yes --admin
+aws configure
+  aws s3api create-bucket --bucket devopsclusterstate.k8s.local --region eu-north-1 --create-bucket-configuration LocationConstraint=eu-north-1
+  aws s3api put-bucket-versioning   --bucket devopsclusterstate.k8s.local   --versioning-configuration Status=Enabled
+  export KOPS_STATE_STORE=s3://devopsclusterstate.k8s.local
+  kops create cluster   --name=devopscluster.k8s.local   --zones=eu-north-1a   --node-count=2   --node-size=t3.micro   --control-plane-size=t3.micro   --dns-zone=devopscluster.k8s.local   --yes
+  kops validate cluster --wait 10m
+
+
