@@ -1,0 +1,34 @@
+user create then acces key:
+aws configure
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+sudo yum -y install terraform
+terraform -v
+mkdir terraform
+cd terraform
+vim main.tf
+     provider "aws" {
+     region = "us-east-1"
+     }
+
+     resource "aws_instance" "one" {
+     count = 3
+     ami = "ami-000ec6c25978d5999"
+     instance_type = "t2.micro"
+     }
+terraform init
+terraform plan
+terraform apply
+terraform state list
+terraform destroy -target = "aws_instance.one[0]"
+terraform destroy -target="aws_instance.one[0]"
+terraform destroy --auto-approve
+
+
+
+
+
+
+
+
+
