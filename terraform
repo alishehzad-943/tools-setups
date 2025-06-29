@@ -178,7 +178,173 @@ resource "aws_instance" "example" {
 
 
 
-
+#HISTORYclear
+    2  terraform version
+    3  aws configure
+    4  sudo yum install -y yum-utils
+    5  sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+    6  sudo yum -y install terraform
+    7  terraform -v
+    8  mkdir aki
+    9  cd aki
+   10  vim main.tf
+   11  terraform init
+   12  terraform plan
+   13  vim main.tf
+   14  terraform plan
+   15  vim main.tf
+   16  terraform plan
+   17  terraform apply --auto-approve
+   18  terraform  destroy --auto-approve
+   19  cd
+   20  aws configure
+   21  vim main.tf
+   22  terraform init
+   23  terraform plan
+   24  terraform apply --auto-approve
+   25  terraform destroy --auto-approve
+   26  clera
+   27  clear
+   28  aws configure
+   29  vim main.tf
+   30  terraform init
+   31  terraform plan
+   32  terraform apply --auto-approve
+   33  terraform destroy --auto-approve
+   34  clear
+   35  vim main.tf
+   36  terraform apply --auto-approve
+   37  terraform destroy --auto-approve
+   38  terraform apply --auto-approve
+   39  terraform state list
+   40  terraform tainaws_s3_bucket.one
+   41  terraform tain aws_s3_bucket.one
+   42  terraform taint aws_s3_bucket.one
+   43  terraform apply --auto-approve
+   44  terraform destroy --auto-approve
+   45  vim main.tf
+   46  terraform destroy --auto-approve
+   47  vim main.tf
+   48  terraform destroy --auto-approve
+   49  vim main.tf
+   50  terraform applu -upgrade
+   51  terraform apply -upgrade
+   52  terraform init
+   53  terraform apply -upgrade
+   54  vim main.tf
+   55  terraform init
+   56  rm terraform.lock.hcl
+   57  vim main.tf
+   58  terraform init
+   59  terraform apply -upgrade
+   60  terraform init -upgrade
+   61  terraform apply
+   62  vim main.tf
+   63  terraform init -upgrade
+   64  ll
+   65  terraform init -upgrade
+   66  terraform apply
+   67  vim main.tf
+   68  terraform init -upgrade
+   69  vim main.tf
+   70  terraform workspace show
+   71  terraform  destroy --auto-approve
+   72  terraform workspace select pro
+   73  terraform  destroy --auto-approve
+   74  clear
+   75  terraform version
+   76  aws configure
+   77  sudo yum install -y yum-utils
+   78  sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+   79  sudo yum -y install terraform
+   80  clear
+   81  vim main.tf
+   82  terraform init
+   83  terraform plan
+   84  vim main.tf
+   85  terraform plan
+   86  terraform  apply --auto-approve
+   87  vim main.tf
+   88  terraform  apply --auto-approve
+   89  vim main.tf
+   90  terraform  apply --auto-approve
+   91  vim main.tf
+   92  terraform  apply --auto-approve
+   93  vim main.tf
+   94  terraform  apply --auto-approve
+   95  vim main.tf
+   96  history
+   97  clear
+   98  terraform state list
+   99  terraform  destroy --auto-approve
+  100  terraform workspace list
+  101  terraform workspace new test
+  102  terraform workspace list
+  103  terraform workspace show
+  104  vim main.tf
+  105  terraform  apply --auto-approve
+  106  vim main.tf
+  107  terraform workspace new dev
+  108  terraform workspace show
+  109  terraform  apply --auto-approve
+  110  terraform  destroy --auto-approve
+  111  terraform workspace select test
+  112  terraform graph
+  113  terraform workspace  new dev
+  114  terraform workspace  new pro
+  115  terraform  apply --auto-approve
+  116  terraform graph
+  117  terraform workspace select test
+  118  terraform graph
+  119  clear
+  120  terraform  destroy --auto-approve
+  121  https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table.html
+  122  ll
+  123  terraform graph
+  124  clear
+  125  terraform workspace show
+  126  terraform workspace delete test
+  127  terraform workspace delete pro
+  128  terraform workspace  select default
+  129  terraform workspace delete pro
+  130  vim main.tf
+  131  terraform workspace list
+  132  terraform workspace delete  dev
+  133  history
+  134  clear
+  135  vim main.tf
+  136  terraform init
+  137  terraform plan
+  138  vim main.tf
+  139  terraform plan
+  140  vim main.tf
+  141  terraform plan
+  142  vim main.tf
+  143  terraform plan
+  144  terraform apply --auto-approve
+  145  cat main.tf
+  146  ll
+  147  cd terraform2
+  148  ll
+  149  vim main.tf
+  150  terraform destroy --auto-approve
+  151  vim main.tf
+  152  terraform apply --auto-approve
+  153  vim main.tf
+  154  terraform apply --auto-approve
+  155  cat main.tf
+  156  vim main.tf
+  157  terraform apply --auto-approve
+  158  cat main.tf
+  159  terraform destroy --auto-approve
+  160  cd
+  161  vim main.tf
+  162  terraform init
+  163  terraform plan
+  164  terraform apply --auto-approve
+  165  cat main.tf
+  166  terraform destroy --auto-approve
+  167  history
 
 
 
