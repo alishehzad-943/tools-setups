@@ -13,7 +13,32 @@ File Parameter
 
 #Jenkins PIpeline
 
-
+pipeline {
+    agent any
+    
+    stages {
+        stage ('one'){
+            steps {
+                sh git 'https://github.com/alishehzad-943/tools-setups.git'
+            }
+        }
+        stage ('two') {
+            steps { 
+                sh 'mvn test'
+            }
+        }
+        stage ('three') {
+            steps {
+                sh 'mvn build'
+            }
+        }
+        stage ('four')  {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+    }
+}
 
 
 
