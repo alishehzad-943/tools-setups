@@ -40,8 +40,18 @@ pipeline {
     }
 }
 
-
-
+    3  clear
+    4  vim jenkins.sh
+    5  sh jenkins.sh
+    6  jenkins -version
+    7  systemctl start jenkins.service
+    8  cat /var/lib/jenkins/secrets/initialAdminPassword
+    9  ll
+   10  cd /var/lib/jenkins/workspace/Netflix
+   11  ll
+   12  cd
+   13  ll
+   14  systemctl stop jenkins.service
 
 
 
