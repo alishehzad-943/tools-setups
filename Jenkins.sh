@@ -29,17 +29,7 @@ mvn -version       # should also show java 17 being used
 #Start jenkins ,path copy ,paste on SSH and enter code
 ============================================================================
 
-#Jenkins Prameter:
-String Parameter
-    Takes a single line of text input from the user.
-Choice Parameter**
-  Shows a dropdown menu with predefined choices.
-Multi-line String Parameter**
-        Allows user to input multiple lines of text.
-Boolean Parameter
-         A checkbox to get true/false (yes/no) input.
-File Parameter
-       Allows users to upload a file when triggering a build.
+.
    
 
 
