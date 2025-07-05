@@ -1,4 +1,5 @@
-    vim sonar.sh
+#Launch EC2 port 9000 and SSH Access ,t2.medium
+     vim sonar.sh
     #copy below all script and run
      sh sonar.sh
 
