@@ -1,33 +1,54 @@
-# STEP 1: System Update
+#!/bin/bash
+set -e
+
+echo "=== STEP 1: Update system ==="
 sudo yum update -y
 
-# STEP 2: Install Java 17 (Amazon Corretto)
+echo "=== STEP 2: Install Java 17 (Amazon Corretto) ==="
 sudo yum install java-17-amazon-corretto -y
 
-# STEP 3: Install Git & Maven
-sudo yum install git maven -y
+echo "=== STEP 3: Install Git & Maven ==="
+sudo yum install git maven wget -y
 
-# STEP 4: Add Jenkins repo & key
+echo "=== STEP 4: Add Jenkins repo & key ==="
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 
-# STEP 5: Install Jenkins
-sudo yum install jenkins -y
+echo "=== STEP 5: Clean cache ==="
+sudo yum clean all
+sudo rm -rf /var/cache/yum
 
-# STEP 6: Ensure Java 17 is default
-sudo alternatives --config java
-# (Choose /usr/lib/jvm/java-17-amazon-corretto.x86_64/bin/java)
+echo "=== STEP 6: Try installing Jenkins from repo ==="
+if ! sudo yum install jenkins -y; then
+  echo "Repo install failed, trying manual download..."
+  wget https://get.jenkins.io/redhat-stable/jenkins-2.516.3-1.1.noarch.rpm -O /tmp/jenkins.rpm
+  sudo yum install /tmp/jenkins.rpm -y
+fi
 
-# STEP 7: Start Jenkins
-sudo systemctl start jenkins.service
-sudo systemctl enable jenkins.service
-# STEP 8: Check versions
-java -version      # should show java 17
-mvn -version       # should also show java 17 being used
+echo "=== STEP 7: Ensure Java 17 is default ==="
+sudo alternatives --install /usr/bin/java java /usr/lib/jvm/java-17-amazon-corretto.x86_64/bin/java 2
+sudo alternatives --set java /usr/lib/jvm/java-17-amazon-corretto.x86_64/bin/java
 
-#then copy Public ip :8080 and paste on browser 
-#Start jenkins ,path copy ,paste on SSH and enter code
-============================================================================
+echo "=== STEP 8: Enable & Start Jenkins ==="
+sudo systemctl daemon-reload
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins --no-pager
+
+echo "=== STEP 9: Check Versions ==="
+java -version
+mvn -version
+
+echo "=== STEP 10: Jenkins Initial Admin Password ==="
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword || echo "Jenkins not started yet!"
+
+
+
+
+
+
+chmod +x install_jenkins.sh
+./install_jenkins.sh
 
 .
    
